@@ -12,10 +12,15 @@ void setup(){
   stroke(0,0,0,200);
   strokeCap(ROUND);
   noStroke();
-//  noFill();
+  //noFill();
   scale(3);
   fill(0,0,100,80);
   triangle(10,10,50,45,90,30);
   fill(0,0,100,80);
   triangle(90,10,50,45,10,30);
+  
+  
+  //Create the image
+  String imgPath = ("../../generatedImagesEX1/" + frame.getTitle());
+  saveFrame(imgPath);
 }

@@ -39,5 +39,9 @@
         }
         i +=1;
       }
+      
+      //Create the image
+      String imgPath = ("../../generatedImagesEX1/" + frame.getTitle());
+      saveFrame(imgPath);
     }
 

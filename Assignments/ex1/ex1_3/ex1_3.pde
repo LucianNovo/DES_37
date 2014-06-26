@@ -1,4 +1,7 @@
-    
+     //Balance Rectangles
+     //Lucian Novosel - 2014
+     //Open sourcerer on the internet of things
+     // WWW: luciannovosel.com GH: github.com/luciannovo    
     
     void setup() {
       size(300, 300);
@@ -12,22 +15,22 @@
       strokeWeight(5);
       
       pushMatrix();
-      translate(width/2,height/2);
+      translate(width/2,height);
       rotate(radians(45));
       rect(0,0, 200, 200);
       popMatrix();
       
       //make frontmost white square
       rectMode(CENTER);
-      stroke(0,0,0,0);
-      fill(255);
       strokeWeight(5);
       
       pushMatrix();
-      translate(width/2,height/2);
-      rect(0,0, 200, 200);
+      translate(3 * width/4 - 6 ,height/2 - 10);
+      rotate(radians(45));
+      rect(0,0, 110, 110);
       popMatrix();
 
-      //make four circles at the corner coordinates of the first screen
-      
+    //Create the image
+    String imgPath = ("../../generatedImagesEX1/" + frame.getTitle());
+    saveFrame(imgPath);
     }
