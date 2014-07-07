@@ -3,7 +3,7 @@ import processing.pdf.*;
 PGraphics pdf;
 String inputPath  = "inputImages/";
 String outputPath = "outputImages/";
-String imageName  = "Mario.png";
+String imageName  = "Mona.jpg";
 int increment = 20;
 int pixel = 0;
 int horz_pixels;
