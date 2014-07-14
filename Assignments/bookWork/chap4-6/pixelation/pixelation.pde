@@ -1,3 +1,9 @@
+     //pixelaion
+     //Lucian Novosel - 2014
+     //Open sourcerer on the internet of things
+     // WWW: luciannovosel.com GH: github.com/luciannovo
+
+
 PImage img;
 import processing.pdf.*;
 PGraphics pdf;
