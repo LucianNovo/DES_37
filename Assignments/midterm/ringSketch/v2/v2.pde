@@ -2,6 +2,13 @@ float dropletArray[] = {
   0.4722, 0.9624, 1.5068, 2.1051, 2.7561, 3.4579, 4.2082, 5.004, 5.7672, 6.4574, 7.0087, 7.34, 7.5139, 7.5139, 7.4981, 7.3578, 7.0716, 6.6183, 5.9726, 5.073, 3.7451
 };
 
+float rotation = 0;
+ //teardrop
+ //Lucian Novosel - 2014
+ //Open sourcerer on the internet of things
+ // WWW: luciannovosel.com GH: github.com/luciannovo
+
+
 Pulsor[] pulsorArray;
 
 void setup() {
@@ -34,7 +41,7 @@ void draw() {
       pulsorArray[i].display();
       pulsorArray[i].check();
   }
-  
+
 }
 
 class Pulsor {
@@ -71,7 +78,7 @@ class Pulsor {
   
   void check(){
     if(p_radius > width*2){
-      p_radius = dropletArray[iterator];
+      p_radius = dropletArray[iterator] * 20;
     }
   }
 
