@@ -17,6 +17,9 @@ static final int WINDOW_HEIGHT = 600;
 static final float GRAVITY = -200; // acceleration due to gravity
 int PlayerID = 1;
 
+PImage backgroundImg;
+
+
 ///////////////////////////////////////////////////
 // GLOBAL VARS
 ///////////////////////////////////////////////////
@@ -36,10 +39,12 @@ void setup() {
   
   // set up the world, camera, and post office
   PlayerID = 1;
-  cam = new PlatformCamera(player1);//
+  cam = new PlatformCamera(PlayerID);//
   po = new PostOffice();
   world = new PlatformWorld(po, cam);
   
+  //initializing the background image
+  backgroundImg = loadImage("mountain.jpg");
 //  rectMode(CENTER);
   
   frameRate(60);
@@ -49,7 +54,6 @@ void setup() {
 }
 
 void draw() {
-  background(230);
-  
+  image(backgroundImg, 0, 0);
   world.draw();
 }

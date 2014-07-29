@@ -61,12 +61,7 @@ class Player extends MassedBeing {
   public void receive(MouseMessage m) {
     if (m.getAction() == POCodes.Click.PRESSED) {
       //set the active character
-      if(playerID == 1){
-        playerID = 2;
-      }
-      else if(playerID == 2){
-        playerID = 1;
-      }
+      cam.swap();
       println("Swap Called");
     }
   }
