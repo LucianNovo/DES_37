@@ -1,8 +1,3 @@
-/**
- * A template to get you started
- * Define your beings, groups, interactors and worlds in separate tabs
- * Put the pieces together in this top-level file!
- */
 import processing.opengl.*;
 import java.util.Hashtable;
 
@@ -11,51 +6,50 @@ import hermes.hshape.*;
 import hermes.animation.*;
 import hermes.physics.*;
 import hermes.postoffice.*;
+
 ///////////////////////////////////////////////////
-// CONSTANTS
+// DEFINE
 ///////////////////////////////////////////////////
-/**
- * Constants should go up here
- * Making more things constants makes them easier to adjust and play with!
- */
+
 static final int WINDOW_WIDTH = 600;
 static final int WINDOW_HEIGHT = 600;
-static final int PORT_IN = 8080;
-static final int PORT_OUT = 8000; 
+
 static final float GRAVITY = -200; // acceleration due to gravity
+int PlayerID = 1;
 
 ///////////////////////////////////////////////////
-// WORLD VARIABLES  
+// GLOBAL VARS
 ///////////////////////////////////////////////////
+
 World world;
-PlatformCamera cam;
+Player player1, player2;
+PlatformCamera cam;//
 PostOffice po;
 PlatformGroup platforms;
-Player player;
-
 ///////////////////////////////////////////////////
 // PAPPLET
 ///////////////////////////////////////////////////
 
 void setup() {
-  size(WINDOW_WIDTH, WINDOW_HEIGHT,JAVA2D); 
-  Hermes.setPApplet(this);
+  size(WINDOW_WIDTH, WINDOW_HEIGHT, JAVA2D);  // set window size
+  Hermes.setPApplet(this);            // give the library the PApplet
   
   // set up the world, camera, and post office
-  cam = new PlatformCamera();
+  PlayerID = 1;
+  cam = new PlatformCamera(player1);//
   po = new PostOffice();
-  world = new PlatformWorld(po, cam);    
+  world = new PlatformWorld(po, cam);
   
-  frameRate(24);
-
-  //Important: don't forget to add setup to TemplateWorld!
-  world.start(); // this should be the last line in setup() method
+//  rectMode(CENTER);
   
+  frameRate(60);
+  
+  //Sets up and starts world
+  world.start();
 }
 
 void draw() {
-  background(255);
+  background(230);
+  
   world.draw();
 }
-
-

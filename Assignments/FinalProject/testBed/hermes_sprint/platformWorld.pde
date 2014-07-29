@@ -2,35 +2,36 @@
  * Template World
  * You'll need to add stuff to setup().
  */
-class TemplateWorld extends World {
+class PlatformWorld extends World {
   
-  TemplateWorld(int portIn, int portOut) {
-    super(portIn, portOut);
+  PlatformWorld(PostOffice po, HCamera cam) {
+    super(po,cam);
   }
 
   void setup() {
+      platforms = new PlatformGroup(world); 
+      Sector first = new Sector(0,0,platforms,0.8); 
+    
+      SectorGrid grid = new SectorGrid(first, platforms);
+      
+      //set up platform generation
+      world.register(grid,cam, new PlatformGenerator());
+    
       Player p1 = new Player();
+      println("player created");
+
       register(p1);
       subscribe(p1, POCodes.Key.UP);
       subscribe(p1, POCodes.Key.RIGHT);
       subscribe(p1, POCodes.Key.DOWN);
       subscribe(p1, POCodes.Key.LEFT);
-      subscribe(p1, POCodes.Button.LEFT, p1.getShape());
-//      add(p1);
-
-//    GlitchyGroup g = new GlitchyGroup(this);
-//    register(g);
-//    
-//    for(int i = 0; i < SQUARE_NUM; i++){
-//      g.addSquare();
-//    }
-//    register(g,g,new SquareInteractor());
-//    subscribe(g, POCodes.Key.A);
+      
+      // make player collide with platforms
+      world.register(player, platforms, new PlatformCollider(0));
   }
   
   void draw(){
     background(0);
-    
     super.draw();
   }
 }
