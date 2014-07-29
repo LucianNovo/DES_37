@@ -38,7 +38,6 @@ void draw() {
 }
 
 void rotatColumn(){
-   for( 
 }
 
 void writeCharacter(char character,float startX, float startY){
