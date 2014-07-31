@@ -88,6 +88,8 @@ class Player extends MassedBeing {
     } else { // when a key is released, we stop the player
         if(nKey == POCodes.Key.D || nKey == POCodes.Key.A || nKey == POCodes.Key.LEFT || nKey == POCodes.Key.RIGHT) {
           getVelocity().x = 0;
+          //end the animation on the first frame
+          image(sprite.animate(), 1, 1);
           sprite.pause();
         }
     }
