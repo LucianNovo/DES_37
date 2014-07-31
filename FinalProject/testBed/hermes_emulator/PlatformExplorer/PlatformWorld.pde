@@ -31,7 +31,8 @@ class PlatformWorld extends World {
     po.subscribe(player1, POCodes.Key.LEFT);
     po.subscribe(player1, POCodes.Key.RIGHT);
     po.subscribe(player1, POCodes.Button.LEFT);
-
+    
+//    po.subscribe(player1, POCodes.Button.LEFT);
   
     // make player collide with platforms
     world.register(player1, platforms, new PlatformCollider(0));

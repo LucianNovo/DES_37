@@ -30,6 +30,8 @@ class Player extends MassedBeing {
       anim = new Animation("Grizzo_Cat-0", 1, 7, ".png", (int)(1000.0f / 24.0f));
     }
 
+    if
+
     animIndex = sprite.addAnimation(anim);
     sprite.setActiveAnimation(animIndex);
     sprite.pause();
@@ -37,6 +39,7 @@ class Player extends MassedBeing {
   
   void draw() {
     scale(0.8);
+    
     imageMode(CENTER);
     // if the character is facing left, invert the image
     if(direction == FACING_LEFT) {
@@ -65,6 +68,8 @@ class Player extends MassedBeing {
       println("Swap Called");
     }
   }
+  
+  
   
   void receive(KeyMessage m) {
     int nKey = m.getKeyCode();
